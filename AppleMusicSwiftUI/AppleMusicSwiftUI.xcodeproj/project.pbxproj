@@ -25,6 +25,11 @@
 		BA25021128D342B300AA404D /* RadioStationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25021028D342B300AA404D /* RadioStationButton.swift */; };
 		BA25021328D342C300AA404D /* TopRadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25021228D342C300AA404D /* TopRadioView.swift */; };
 		BA25021528D342D200AA404D /* TopRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25021428D342D200AA404D /* TopRadioButton.swift */; };
+		BA25021728D3447700AA404D /* SearchTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25021628D3447700AA404D /* SearchTextFieldView.swift */; };
+		BA25021928D3475400AA404D /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25021828D3475400AA404D /* CategoryData.swift */; };
+		BA25021B28D3499300AA404D /* SearchCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25021A28D3499300AA404D /* SearchCategoryButton.swift */; };
+		BA25021D28D350F600AA404D /* SongData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25021C28D350F600AA404D /* SongData.swift */; };
+		BA25021F28D3540200AA404D /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25021E28D3540200AA404D /* CategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +52,11 @@
 		BA25021028D342B300AA404D /* RadioStationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStationButton.swift; sourceTree = "<group>"; };
 		BA25021228D342C300AA404D /* TopRadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRadioView.swift; sourceTree = "<group>"; };
 		BA25021428D342D200AA404D /* TopRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRadioButton.swift; sourceTree = "<group>"; };
+		BA25021628D3447700AA404D /* SearchTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldView.swift; sourceTree = "<group>"; };
+		BA25021828D3475400AA404D /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
+		BA25021A28D3499300AA404D /* SearchCategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryButton.swift; sourceTree = "<group>"; };
+		BA25021C28D350F600AA404D /* SongData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongData.swift; sourceTree = "<group>"; };
+		BA25021E28D3540200AA404D /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +128,8 @@
 			children = (
 				BA2501FA28D3418000AA404D /* LibraryData.swift */,
 				BA2501FC28D3419D00AA404D /* RadioData.swift */,
+				BA25021828D3475400AA404D /* CategoryData.swift */,
+				BA25021C28D350F600AA404D /* SongData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,6 +149,9 @@
 			isa = PBXGroup;
 			children = (
 				BA2501FE28D341BC00AA404D /* SearchView.swift */,
+				BA25021628D3447700AA404D /* SearchTextFieldView.swift */,
+				BA25021A28D3499300AA404D /* SearchCategoryButton.swift */,
+				BA25021E28D3540200AA404D /* CategoryView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -258,15 +273,20 @@
 				BA25020528D3421D00AA404D /* MainLibrary.swift in Sources */,
 				BA2501F928D3414C00AA404D /* TabsView.swift in Sources */,
 				BA25020928D3425900AA404D /* ListItem.swift in Sources */,
+				BA25021928D3475400AA404D /* CategoryData.swift in Sources */,
+				BA25021F28D3540200AA404D /* CategoryView.swift in Sources */,
 				BA2501E628D3408400AA404D /* ContentView.swift in Sources */,
 				BA25020328D341FA00AA404D /* NowPlayingBar.swift in Sources */,
 				BA2501FD28D3419D00AA404D /* RadioData.swift in Sources */,
 				BA25021128D342B300AA404D /* RadioStationButton.swift in Sources */,
 				BA25021328D342C300AA404D /* TopRadioView.swift in Sources */,
 				BA2501E428D3408400AA404D /* AppleMusicSwiftUIApp.swift in Sources */,
+				BA25021B28D3499300AA404D /* SearchCategoryButton.swift in Sources */,
 				BA25021528D342D200AA404D /* TopRadioButton.swift in Sources */,
 				BA2501FF28D341BC00AA404D /* SearchView.swift in Sources */,
 				BA2501FB28D3418000AA404D /* LibraryData.swift in Sources */,
+				BA25021D28D350F600AA404D /* SongData.swift in Sources */,
+				BA25021728D3447700AA404D /* SearchTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

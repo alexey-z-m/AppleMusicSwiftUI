@@ -13,6 +13,7 @@ struct MainLibrary: View {
                 .font(.title2)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
+                .padding(.leading,10)
         }
     }
 }

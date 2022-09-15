@@ -8,7 +8,7 @@ struct NowPlayingBar: View {
             Rectangle()
                 .frame(width: UIScreen.main.bounds.size.width, height: 90)
                 .foregroundColor(Color.white.opacity(0.0))
-                .background(.ultraThinMaterial).opacity(0.6)
+                .background(.ultraThinMaterial).opacity(0.7)
             HStack {
                 Button(action: {}) {
                     HStack {
