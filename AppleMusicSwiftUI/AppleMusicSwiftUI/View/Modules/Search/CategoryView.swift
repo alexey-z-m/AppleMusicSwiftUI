@@ -7,15 +7,20 @@
 
 import SwiftUI
 
-struct CategoryView: View {    
+struct CategoryView: View {
+    var namecategory: String
     var body: some View {
-        Text("Categoty")
-            .navigationTitle("Categoty")
+        ScrollView(.vertical) {
+            TopCategory()
+            BottomCategory()
+            Spacer(minLength: 100)
+                .navigationTitle(namecategory)
+        }
     }
 }
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryView()
+        CategoryView(namecategory: "Category")
     }
 }

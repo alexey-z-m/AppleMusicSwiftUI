@@ -13,7 +13,7 @@ struct SearchCategoryButton: View {
     
     var body: some View {
         NavigationLink {
-            CategoryView()
+            CategoryView(namecategory: name)
         } label: {
             ZStack(alignment: .bottomLeading){
                 Image(nameImage)

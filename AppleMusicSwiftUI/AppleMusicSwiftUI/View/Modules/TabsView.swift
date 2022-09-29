@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct TabsView: View {
-    
+    @State var playerClicked = false
+    @State var curentPlaySong = CurentPlaySong()
     var body: some View {
         ZStack(alignment: .bottom) {
             TabView {
@@ -15,7 +16,7 @@ struct TabsView: View {
                         Text(Strings.radio)
                         Image(systemName: "dot.radiowaves.left.and.right")
                     }
-                SearchView()
+                SearchView(curentPlaySong: $curentPlaySong)
                     .tabItem {
                         Text(Strings.search)
                         Image(systemName: "magnifyingglass")
@@ -23,7 +24,10 @@ struct TabsView: View {
             }
             .accentColor(.red)
             
-            NowPlayingBar().padding(.bottom, 50)
+            NowPlayingBar(
+                playerClicked: $playerClicked,curentPlaySong: $curentPlaySong
+            )
+            .offset(y: -49)//(y: playerClicked ? 0 : -49)
         }
     }
 }

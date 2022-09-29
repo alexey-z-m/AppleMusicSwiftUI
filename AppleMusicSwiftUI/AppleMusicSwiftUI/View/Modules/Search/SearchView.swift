@@ -1,33 +1,48 @@
 import SwiftUI
 
 struct SearchView: View {
+    @Binding var curentPlaySong: CurentPlaySong
+    @State var songs = SongData.getSongs()
+    @State var searchText = ""
+    @State var isSearching = false
     var body: some View {
         NavigationView {
-            ScrollView {
+            ScrollView{
                 LazyVStack(alignment: .leading) {
-                    SearchTextFieldView(text: .constant(""))
-                        .navigationTitle("Поиск")
-                    Text("Поиск по категориям")
-                        .bold()
-                        .font(.title2)
-                        .padding(.leading)
-                    LazyVGrid(columns: [GridItem(),GridItem()]) {
-                        ForEach(CategoryData.categoryData) { item in
-                            SearchCategoryButton(
-                                nameImage: item.nameImage,
-                                name: item.name
-                            )
+                    if searchText.isEmpty {
+                        Text("Поиск по категориям")
+                            .bold()
+                            .font(.title2)
+                            .padding(.leading)
+                        LazyVGrid(columns: [GridItem(),GridItem()]) {
+                            ForEach(CategoryData.categoryData) { item in
+                                SearchCategoryButton(
+                                    nameImage: item.nameImage,
+                                    name: item.name
+                                )
+                            }
+                        }
+                        .padding()
+                    } else {
+                        ForEach(songs.filter { song in
+                            searchText == "" ? true :
+                            song.songName.lowercased().contains(searchText.lowercased())
+                        }) { song in
+                            SearchCell(curentPlaySong: $curentPlaySong, song: song)
                         }
                     }
-                    .padding()
+                }
+                .navigationTitle("Поиск")
+            }
+            .searchable(text: $searchText, prompt: "Ваша медиатека") {
+                ForEach(songs.filter { song in
+                    searchText == "" ? true :
+                    song.songName.lowercased().contains(searchText.lowercased())
+                }) { song in
+                    Text(song.songName)
+                        .searchCompletion(song.songName)
                 }
             }
         }
-    }
-}
-
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
     }
 }
