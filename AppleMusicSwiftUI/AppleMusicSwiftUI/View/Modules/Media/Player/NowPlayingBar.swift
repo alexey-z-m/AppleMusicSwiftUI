@@ -42,7 +42,6 @@ struct NowPlayingBar: View {
                 
                 Button{
                     play.toggle()
-                    
                 } label: {
                     if play {
                         Image(systemName: "pause.fill")

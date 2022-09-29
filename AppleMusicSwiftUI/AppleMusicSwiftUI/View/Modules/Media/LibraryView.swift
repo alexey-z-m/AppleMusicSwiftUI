@@ -23,7 +23,6 @@ struct LibraryView: View {
                             .foregroundColor(.red)
                     })
             }
-                
         }
     }
 }

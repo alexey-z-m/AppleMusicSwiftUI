@@ -9,10 +9,9 @@ import SwiftUI
 
 struct SearchCell: View {
     @Binding var curentPlaySong: CurentPlaySong
-    
     var song: SongData
+    
     var body: some View {
-        
         HStack {
             Image(song.nameImage)
                 .resizable()
@@ -23,7 +22,6 @@ struct SearchCell: View {
                     .bold()
                 Text(song.artistName)
             }
-            
         }
         .onTapGesture(count: 2) {
             curentPlaySong.info = song
@@ -32,20 +30,5 @@ struct SearchCell: View {
         .tint(.primary)
         .padding(.top, 10)
         .padding(.leading, 20)
-        
-        
     }
 }
-
-//struct SearchCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchCell(
-//            song: SongData(
-//                artistName: "qwe",
-//                songName: "123",
-//                nameImage: "image1",
-//                timeSong: 285
-//            )
-//        )
-//    }
-//}
