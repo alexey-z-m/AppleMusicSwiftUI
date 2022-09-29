@@ -8,7 +8,7 @@ struct RadioStationsView: View {
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
-                .font(.largeTitle)
+                .font(.title)
             
             LazyVGrid(columns: [GridItem()]) {
                 ForEach(RadioData.radioData) { item in

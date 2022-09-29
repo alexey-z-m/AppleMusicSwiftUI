@@ -7,7 +7,7 @@ struct RadioStationButton: View {
     let discription: String
     
     var body: some View {
-        Button(action: {}) {
+        Button {} label: {
              HStack{
                  Image(nameImage)
                      .resizable()
