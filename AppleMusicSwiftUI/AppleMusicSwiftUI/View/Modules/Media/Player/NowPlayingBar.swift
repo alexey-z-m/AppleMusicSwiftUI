@@ -1,11 +1,5 @@
 import SwiftUI
 
-struct CurentPlaySong {
-    var info = SongData.getSongs().first!
-    var currentTime = 10.0
-    var volumeLevel = 10.0
-}
-
 struct NowPlayingBar: View {
     @State var play = false
     @Binding var playerClicked: Bool
