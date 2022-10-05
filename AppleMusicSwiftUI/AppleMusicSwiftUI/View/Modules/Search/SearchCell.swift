@@ -17,6 +17,7 @@ struct SearchCell: View {
                 .resizable()
                 .frame(width: 70, height: 70, alignment: .center)
                 .padding(.trailing, 20)
+            
             VStack(alignment: .leading) {
                 Text(song.songName)
                     .bold()

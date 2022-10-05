@@ -14,6 +14,7 @@ struct SearchView: View {
                             .bold()
                             .font(.title2)
                             .padding(.leading)
+                        
                         LazyVGrid(columns: [GridItem(),GridItem()]) {
                             ForEach(CategoryData.categoryData) { item in
                                 SearchCategoryButton(

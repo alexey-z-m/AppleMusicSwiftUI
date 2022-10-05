@@ -12,7 +12,9 @@ struct CategoryView: View {
     var body: some View {
         ScrollView(.vertical) {
             TopCategory()
+            
             BottomCategory()
+            
             Spacer(minLength: 100)
                 .navigationTitle(namecategory)
         }

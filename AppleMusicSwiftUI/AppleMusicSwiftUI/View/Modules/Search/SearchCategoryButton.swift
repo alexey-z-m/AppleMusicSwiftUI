@@ -21,6 +21,7 @@ struct SearchCategoryButton: View {
                     .scaledToFill()
                     .frame(width: (UIScreen.main.bounds.width/2) - 20, height: 130, alignment: .center)
                     .cornerRadius(10)
+                
                 Text(name)
                     .padding(.leading, 20)
                     .padding(.bottom, 10)
