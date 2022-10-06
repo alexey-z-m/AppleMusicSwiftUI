@@ -7,7 +7,7 @@ struct SearchView: View {
     @State var isSearching = false
     var body: some View {
         NavigationView {
-            ScrollView{
+            ScrollView {
                 LazyVStack(alignment: .leading) {
                     if searchText.isEmpty {
                         Text("Поиск по категориям")
