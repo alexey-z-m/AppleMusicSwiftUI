@@ -3,6 +3,7 @@ import SwiftUI
 struct TabsView: View {
     @State var playerClicked = false
     @State var curentPlaySong = CurentPlaySong()
+    @State var isSearchBarActive = false
     var body: some View {
         ZStack(alignment: .bottom) {
             TabView {
@@ -16,19 +17,24 @@ struct TabsView: View {
                         Text(Strings.radio)
                         Image(systemName: "dot.radiowaves.left.and.right")
                     }
-                // SearchView(curentPlaySong: $curentPlaySong)
-                UIKitSearch()
+                SearchView(curentPlaySong: $curentPlaySong, isSearchBarActive: $isSearchBarActive)
                     .tabItem {
                         Text(Strings.search)
                         Image(systemName: "magnifyingglass")
                     }
+                UIKitSearch()
+                    .tabItem {
+                        Text(Strings.searchUIKit)
+                        Image(systemName: "magnifyingglass")
+                    }
             }
             .accentColor(.red)
-            
-            NowPlayingBar(
-                playerClicked: $playerClicked,curentPlaySong: $curentPlaySong
-            )
-            .offset(y: -49)
+            if !isSearchBarActive{
+                NowPlayingBar(
+                    playerClicked: $playerClicked,curentPlaySong: $curentPlaySong
+                )
+                .offset(y: -49)
+            }
         }
     }
 }
@@ -44,5 +50,6 @@ extension TabsView {
         static let media = "Медиатека"
         static let radio = "Радио"
         static let search = "Поиск"
+        static let searchUIKit = "Поиск UIKit"
     }
 }

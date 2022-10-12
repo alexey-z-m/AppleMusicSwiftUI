@@ -7,7 +7,7 @@ class HeaderSearchCollectionReusableView: UICollectionReusableView {
         let label = UILabel()
         label.numberOfLines = 1
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 21, weight: .bold)
+        label.font = .systemFont(ofSize: 22, weight: .bold)
         return label
     }()
     
@@ -33,7 +33,7 @@ class HeaderSearchCollectionReusableView: UICollectionReusableView {
     
     func setupLayout() {
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        label.topAnchor.constraint(equalTo: topAnchor).isActive = true
     }
     
     func configure() {

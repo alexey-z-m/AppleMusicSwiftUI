@@ -4,7 +4,7 @@ struct SearchView: View {
     @Binding var curentPlaySong: CurentPlaySong
     @State var songs = SongData.getSongs()
     @State var searchText = ""
-    @State var isSearching = false
+    @Binding var isSearchBarActive: Bool
     var body: some View {
         NavigationView {
             ScrollView {
@@ -43,6 +43,12 @@ struct SearchView: View {
                     Text(song.songName)
                         .searchCompletion(song.songName)
                 }
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
+                isSearchBarActive = true
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+                isSearchBarActive = false
             }
         }
     }

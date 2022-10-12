@@ -1,7 +1,6 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-    
     private let model = CategoryData.categoryData
     private var filteredSongs = [SongData]()
     private var searchBarIsEmpty: Bool {
@@ -56,8 +55,8 @@ class SearchViewController: UIViewController {
     func setupLayout() {
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        collection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        collection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        collection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
+        collection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true
         collection.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         table.translatesAutoresizingMaskIntoConstraints = false
         table.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -96,13 +95,13 @@ class SearchViewController: UIViewController {
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 100, right: 0)
         layout.itemSize = CGSize(
-            width: (view.frame.size.width / 2) - 25,
+            width: (view.frame.size.width / 2) - 20,
             height: 130
         )
         layout.minimumLineSpacing = 10
         layout.headerReferenceSize = CGSize(
             width: view.frame.size.width,
-            height: 30
+            height: 40
         )
         return layout
     }
