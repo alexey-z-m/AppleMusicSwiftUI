@@ -4,12 +4,6 @@ import SwiftUI
 class CategoryCell: UICollectionViewCell {
     static let identifier = "CategoryCell"
     
-    private lazy var button: UIButton = {
-        let button = UIButton(type: .system)
-        button.addTarget(self, action: #selector(openCategory), for: .touchUpInside)
-        return button
-    }()
-    
     private let label: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
@@ -43,14 +37,12 @@ class CategoryCell: UICollectionViewCell {
     // MARK: - Settings
     
     func setupHierarchy() {
-        contentView.addSubview(button)
-        button.addSubview(imageView)
-        button.addSubview(label)
+        contentView.addSubview(imageView)
+        contentView.addSubview(label)
     }
     
     func setupLayout() {
-        button.frame = contentView.bounds
-        imageView.frame = button.bounds
+        imageView.frame = contentView.bounds
         
         label.translatesAutoresizingMaskIntoConstraints = false
         label.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 15).isActive = true
@@ -61,10 +53,6 @@ class CategoryCell: UICollectionViewCell {
         label.text = model.name
         imageView.image = UIImage(named: model.nameImage)
         
-    }
-    
-   @objc func openCategory() {
-       
     }
 }
 

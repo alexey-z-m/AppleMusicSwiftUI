@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI
 
 class SearchViewController: UIViewController {
     private let model = CategoryData.categoryData
@@ -42,6 +43,7 @@ class SearchViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = search
         collection.dataSource = self
+        collection.delegate = self
         table.dataSource = self
         table.isHidden = true
         table.rowHeight = 90
@@ -157,6 +159,13 @@ extension SearchViewController: UICollectionViewDataSource {
     }
 }
 
+extension SearchViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        navigationController?.pushViewController(CategoryViewController(namecategory: model[indexPath.row].name), animated: true)
+        return true
+    }
+}
+
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         filteredSongs.count
@@ -171,5 +180,17 @@ extension SearchViewController: UITableViewDataSource {
         }
         cell.configure(filteredSongs[indexPath.row])
         return cell
+    }
+}
+
+final class CategoryViewController: UIHostingController<CategoryView> {
+    private var namecategory: String
+    init(namecategory: String) {
+        self.namecategory = namecategory
+        super.init(rootView: CategoryView(namecategory: namecategory))
+    }
+    
+    @objc required dynamic init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
