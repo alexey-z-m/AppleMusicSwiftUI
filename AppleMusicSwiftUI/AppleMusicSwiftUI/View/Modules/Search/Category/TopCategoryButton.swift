@@ -1,6 +1,13 @@
+//
+//  TopButton.swift
+//  AppleMusicSwiftUI
+//
+//  Created by Panda on 22.09.2022.
+//
+
 import SwiftUI
 
-struct TopRadioButton: View {
+struct TopCategoryButton: View {
     @Environment(\.colorScheme) var colorScheme
     let type: String
     let name: String
@@ -18,7 +25,7 @@ struct TopRadioButton: View {
                     .bold()
                     .frame(minWidth: Metrics.topRadioWidth, alignment: .leading)
                     .font(.title3)
-                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                .foregroundColor(colorScheme == .dark ? .white : .black)
                 
                 Text(discription)
                     .frame(minWidth: Metrics.topRadioWidth, alignment: .leading)
@@ -34,7 +41,17 @@ struct TopRadioButton: View {
     }
 }
 
-extension TopRadioButton {
+struct TopCategoryButton_Previews: PreviewProvider {
+    static var previews: some View {
+        TopCategoryButton(
+            type: "",
+            name: "",
+            discription: "",
+            nameImage: "image1")
+    }
+}
+
+extension TopCategoryButton {
     enum Metrics {
         static let topRadioWidth = UIScreen.main.bounds.width - 50
         static var topRadioHeight = topRadioWidth / 1.74
