@@ -72,15 +72,18 @@ class SearchViewController: UIViewController {
             frame: .zero,
             collectionViewLayout: getLayout()
         )
+        
         collectionView.register(
             CategoryCell.self,
             forCellWithReuseIdentifier: CategoryCell.identifier
         )
+        
         collectionView.register(
             HeaderSearchCollectionReusableView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: HeaderSearchCollectionReusableView.identifier
         )
+        
         collectionView.backgroundColor = .clear
         collection = collectionView
     }
@@ -100,11 +103,13 @@ class SearchViewController: UIViewController {
             width: (view.frame.size.width / 2) - 20,
             height: 130
         )
+        
         layout.minimumLineSpacing = 10
         layout.headerReferenceSize = CGSize(
             width: view.frame.size.width,
             height: 40
         )
+        
         return layout
     }
 }
@@ -114,14 +119,15 @@ extension SearchViewController: UISearchResultsUpdating, UISearchControllerDeleg
         if isFiltering {
             collection.isHidden = true
             table.isHidden = false
-        }
-        else {
+        } else {
             collection.isHidden = false
             table.isHidden = true
         }
+        
         filteredSongs = SongData.getSongs().filter({ song in
             return (song.songName + song.artistName).lowercased().contains(search.searchBar.text!.lowercased())
         })
+        
         table.reloadData()
     }
 }
@@ -138,6 +144,7 @@ extension SearchViewController: UICollectionViewDataSource {
         ) as? CategoryCell else {
             return UICollectionViewCell()
         }
+        
         cell.configure(model[indexPath.row])
         return cell
     }
@@ -151,6 +158,7 @@ extension SearchViewController: UICollectionViewDataSource {
             ) as? HeaderSearchCollectionReusableView else {
                 return UICollectionReusableView()
             }
+            
             header.configure()
             return header
         } else {
@@ -178,6 +186,7 @@ extension SearchViewController: UITableViewDataSource {
         ) as? TableViewCell else {
             return UITableViewCell()
         }
+        
         cell.configure(filteredSongs[indexPath.row])
         return cell
     }
