@@ -44,12 +44,6 @@ struct SearchView: View {
                         .searchCompletion(song.songName)
                 }
             }
-            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
-                isSearchBarActive = true
-            }
-            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
-                isSearchBarActive = false
-            }
         }
     }
 }
